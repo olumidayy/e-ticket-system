@@ -15,6 +15,14 @@ export default async ({ expressApp } : { expressApp: Application }) => {
     {
       name: 'userModel',
       model: require('../models/user')
+    },
+    {
+      name: 'ticketModel',
+      model: require('../models/ticket')
+    },
+    {
+      name: 'commentModel',
+      model: require('../models/comment')
     }
   ];
 

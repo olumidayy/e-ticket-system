@@ -5,6 +5,7 @@ export interface IUser {
     email: string;
     password: string;
     role: string;
+    otp: number;
 }
 
 export interface IUserCreateDTO {
@@ -14,7 +15,8 @@ export interface IUserCreateDTO {
     password: string;
 }
 
-export interface IUserLoginDTO {
-    email: string;
-    password: string;
+export interface IUserUpdateDTO {
+    firstname?: string;
+    lastname?: string;
 }
+
