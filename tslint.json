@@ -5,7 +5,12 @@
     ],
     "jsRules": {},
     "rules": {
-        "no-console": false
+        "no-console": false,
+        "max-line-length": {
+            "options": [120]
+        },
+        "semicolon": [true, "always"]
     },
+    
     "rulesDirectory": []
 }

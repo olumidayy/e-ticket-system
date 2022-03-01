@@ -1,15 +1,16 @@
-import mongoose from 'mongoose';
+import { Schema, model } from 'mongoose';
+import { IComment } from '../interfaces/IComment';
 
-const Comment = new mongoose.Schema(
+const Comment = new Schema<IComment>(
   {
     authorId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: [true, "authorId is required."],
         ref: 'User'
     },
     
     ticketId: {
-        type: mongoose.Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         required: [true, "ticketId is required."],
         ref: 'Ticket'
     },
@@ -28,4 +29,6 @@ const Comment = new mongoose.Schema(
   { timestamps: true },
 );
 
-export default mongoose.model('Comment', Comment);
+const commentSchema = model<IComment>('Comment', Comment);
+
+export { commentSchema as Comment };

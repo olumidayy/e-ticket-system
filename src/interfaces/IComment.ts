@@ -1,9 +1,10 @@
-import { Schema } from "mongoose";
+import { Schema, Document } from "mongoose";
 
-export interface IComment {
+export interface IComment extends Document {
     _id: Schema.Types.ObjectId;
-    authorId: string;
-    authorName: string;
+    authorId: Schema.Types.ObjectId;
+    ticketId: Schema.Types.ObjectId;
+    authorName?: string;
     comment: string;
 }
 

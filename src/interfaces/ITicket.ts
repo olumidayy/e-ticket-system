@@ -10,7 +10,6 @@ export interface ITicket {
 
 export interface ITicketCreateDTO {
     authorId: string;
-    authorName: string;
     title: string;
     description: string;
 }

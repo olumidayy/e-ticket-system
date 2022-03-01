@@ -1,7 +1,7 @@
 import express, { NextFunction } from 'express';
 import cors from 'cors';
-// import routes from '../api';
-// import config from '../config';
+import routes from '../modules';
+import config from '../config';
 
 interface IError extends Error {
     status?: number;
@@ -16,7 +16,7 @@ export default ({ app }: { app: express.Application }) => {
   // Middleware that transforms the raw string of req.body into json
   app.use(express.json());
   // Load API routes
-//   app.use(config.api.prefix, routes());
+  app.use(config.api.prefix, routes());
 
   /// catch 404 and forward to error handler
   app.use((req, res, next) => {
@@ -41,9 +41,7 @@ export default ({ app }: { app: express.Application }) => {
   app.use((err: IError, req: express.Request, res: express.Response, next: NextFunction) => {
     res.status(err.status || 500);
     res.json({
-      errors: {
-        message: err.message,
-      },
+      message: err.message
     });
   });
 };

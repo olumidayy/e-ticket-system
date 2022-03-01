@@ -1,6 +1,6 @@
 import { Request } from 'express';
 import jwt from 'jsonwebtoken';
-import getTokenFromHeader from '../api/middlewares';
+import getTokenFromHeader from '../modules/auth/middlewares';
 import config from '../config';
 
 export default function formatToken(req: Request): any {
